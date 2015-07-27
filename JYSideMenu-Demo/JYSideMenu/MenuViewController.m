@@ -54,6 +54,7 @@
     self.leftView.layer.position = CGPointMake(scrollView.contentOffset.x *0.65 , 0);
         CGFloat aa =  scrollView.contentOffset.x / ([UIScreen mainScreen].bounds.size.width * 0.8);
      self.maskView.alpha = aa - 0.1  ;
+//    NSLog(@"%@ , %f" , NSStringFromCGPoint(self.leftView.layer.position) , scrollView.contentOffset.x) ;
 }
 
 #pragma mark - 切换视图
