@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BaseTableViewController.h
 //  JYSideMenu-Demo
 //
 //  Created by wei_jingyun on 15/7/26.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BaseTableViewController : UITableViewController
 
 @end
-

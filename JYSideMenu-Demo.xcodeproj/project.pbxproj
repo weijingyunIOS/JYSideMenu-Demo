@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		6484B1431B64A619003E515B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1421B64A619003E515B /* main.m */; };
 		6484B1461B64A619003E515B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1451B64A619003E515B /* AppDelegate.m */; };
-		6484B1491B64A619003E515B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1481B64A619003E515B /* ViewController.m */; };
-		6484B14C1B64A619003E515B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6484B14A1B64A619003E515B /* Main.storyboard */; };
 		6484B14E1B64A619003E515B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6484B14D1B64A619003E515B /* Images.xcassets */; };
 		6484B1511B64A619003E515B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6484B14F1B64A619003E515B /* LaunchScreen.xib */; };
 		6484B15D1B64A619003E515B /* JYSideMenu_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B15C1B64A619003E515B /* JYSideMenu_DemoTests.m */; };
+		6484B16A1B64A6A0003E515B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1691B64A6A0003E515B /* MenuViewController.m */; };
+		64B1A8101B65090E00667564 /* mainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B1A80F1B65090E00667564 /* mainTabBarController.m */; };
+		64B1A8131B65095600667564 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B1A8121B65095600667564 /* BaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,17 @@
 		6484B1421B64A619003E515B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6484B1441B64A619003E515B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6484B1451B64A619003E515B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6484B1471B64A619003E515B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6484B1481B64A619003E515B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6484B14B1B64A619003E515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6484B14D1B64A619003E515B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6484B1501B64A619003E515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6484B1561B64A619003E515B /* JYSideMenu-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JYSideMenu-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6484B15B1B64A619003E515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6484B15C1B64A619003E515B /* JYSideMenu_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSideMenu_DemoTests.m; sourceTree = "<group>"; };
+		6484B1681B64A6A0003E515B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		6484B1691B64A6A0003E515B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		64B1A80E1B65090E00667564 /* mainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTabBarController.h; sourceTree = "<group>"; };
+		64B1A80F1B65090E00667564 /* mainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTabBarController.m; sourceTree = "<group>"; };
+		64B1A8111B65095600667564 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		64B1A8121B65095600667564 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +85,10 @@
 		6484B13F1B64A619003E515B /* JYSideMenu-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				6484B1671B64A696003E515B /* JYSideMenu */,
+				64B1A80D1B6507F800667564 /* main */,
 				6484B1441B64A619003E515B /* AppDelegate.h */,
 				6484B1451B64A619003E515B /* AppDelegate.m */,
-				6484B1471B64A619003E515B /* ViewController.h */,
-				6484B1481B64A619003E515B /* ViewController.m */,
-				6484B14A1B64A619003E515B /* Main.storyboard */,
 				6484B14D1B64A619003E515B /* Images.xcassets */,
 				6484B14F1B64A619003E515B /* LaunchScreen.xib */,
 				6484B1401B64A619003E515B /* Supporting Files */,
@@ -117,6 +120,26 @@
 				6484B15B1B64A619003E515B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6484B1671B64A696003E515B /* JYSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6484B1681B64A6A0003E515B /* MenuViewController.h */,
+				6484B1691B64A6A0003E515B /* MenuViewController.m */,
+			);
+			path = JYSideMenu;
+			sourceTree = "<group>";
+		};
+		64B1A80D1B6507F800667564 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				64B1A80E1B65090E00667564 /* mainTabBarController.h */,
+				64B1A80F1B65090E00667564 /* mainTabBarController.m */,
+				64B1A8111B65095600667564 /* BaseTableViewController.h */,
+				64B1A8121B65095600667564 /* BaseTableViewController.m */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +222,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6484B14C1B64A619003E515B /* Main.storyboard in Resources */,
 				6484B1511B64A619003E515B /* LaunchScreen.xib in Resources */,
 				6484B14E1B64A619003E515B /* Images.xcassets in Resources */,
 			);
@@ -219,9 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6484B1491B64A619003E515B /* ViewController.m in Sources */,
 				6484B1461B64A619003E515B /* AppDelegate.m in Sources */,
 				6484B1431B64A619003E515B /* main.m in Sources */,
+				64B1A8101B65090E00667564 /* mainTabBarController.m in Sources */,
+				6484B16A1B64A6A0003E515B /* MenuViewController.m in Sources */,
+				64B1A8131B65095600667564 /* BaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +268,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6484B14A1B64A619003E515B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6484B14B1B64A619003E515B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6484B14F1B64A619003E515B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -347,7 +363,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "JYSideMenu-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,7 +375,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "JYSideMenu-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +436,7 @@
 				6484B1621B64A619003E515B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6484B1631B64A619003E515B /* Build configuration list for PBXNativeTarget "JYSideMenu-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +445,7 @@
 				6484B1651B64A619003E515B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
