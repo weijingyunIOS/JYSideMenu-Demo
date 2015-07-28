@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6472E1BA1B675FEE00E8B250 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6472E1B91B675FEE00E8B250 /* LeftViewController.m */; };
 		6484B1431B64A619003E515B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1421B64A619003E515B /* main.m */; };
 		6484B1461B64A619003E515B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6484B1451B64A619003E515B /* AppDelegate.m */; };
 		6484B14E1B64A619003E515B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6484B14D1B64A619003E515B /* Images.xcassets */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6472E1B81B675FEE00E8B250 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		6472E1B91B675FEE00E8B250 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		6484B13D1B64A619003E515B /* JYSideMenu-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYSideMenu-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6484B1411B64A619003E515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6484B1421B64A619003E515B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				64B1A80F1B65090E00667564 /* mainTabBarController.m */,
 				64B1A8111B65095600667564 /* BaseTableViewController.h */,
 				64B1A8121B65095600667564 /* BaseTableViewController.m */,
+				6472E1B81B675FEE00E8B250 /* LeftViewController.h */,
+				6472E1B91B675FEE00E8B250 /* LeftViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				6484B1461B64A619003E515B /* AppDelegate.m in Sources */,
 				6484B1431B64A619003E515B /* main.m in Sources */,
 				64B1A8101B65090E00667564 /* mainTabBarController.m in Sources */,
+				6472E1BA1B675FEE00E8B250 /* LeftViewController.m in Sources */,
 				6484B16A1B64A6A0003E515B /* MenuViewController.m in Sources */,
 				64B1A8131B65095600667564 /* BaseTableViewController.m in Sources */,
 			);

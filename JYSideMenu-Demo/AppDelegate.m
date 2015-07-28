@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "mainTabBarController.h"
+#import "LeftViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,12 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
-    MenuViewController * menu = [[MenuViewController alloc] init] ;
-    self.mainViewC = menu ;
     mainTabBarController * mainView = [[mainTabBarController alloc] init] ;
-    mainView.view.frame = menu.view.frame ;
-    [menu.menuView addSubview:mainView.view] ;
-    [menu addChildViewController:mainView] ;
+    UIViewController *leftC = [[LeftViewController alloc] init] ;
+    MenuViewController * menu = [[MenuViewController alloc] initWithLeftViewController:leftC MenuViewController:mainView] ;
+    self.mainViewC = menu ;
+    leftC.view.backgroundColor = [UIColor orangeColor] ;
     self.window.rootViewController = menu ;
     [self.window makeKeyAndVisible] ;
     return YES;

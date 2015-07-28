@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
-@property (weak , nonatomic) UIView * menuView ;
-@property (weak , nonatomic) UIView * leftView ;
+
 - (void) changeViewController ;
+- (instancetype) initWithLeftViewController : (UIViewController *) LeftController MenuViewController : (UIViewController *) menuController ;
+
 @end

@@ -12,32 +12,48 @@
 
 @property (weak , nonatomic) UIScrollView * scrollView ;
 @property (weak , nonatomic) UIView * maskView ;
+@property (weak , nonatomic) UIView * menuView ;
+@property (weak , nonatomic) UIView * leftView ;
 
 @end
 
 
 @implementation MenuViewController
 
-- (void)loadView {
-    self.view  = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
-    self.scrollView = (UIScrollView *)self.view ;
+// 设置左右的控制器
+- (instancetype) initWithLeftViewController:(UIViewController *)LeftController MenuViewController:(UIViewController *)menuController {
+    if (self = [super init]) {
+        NSAssert(LeftController != nil && menuController != nil, @"控制器不可为空") ;
+        UIScrollView * scV = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
+        self.scrollView = scV ;
+        [self.view addSubview:scV] ;
+        self.leftView = [self setViewController:LeftController] ;
+        self.menuView = [self setViewController:menuController] ;
+        [self setFrame] ;
+    }
+    return self ;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad] ;
-    CGSize size = [UIScreen mainScreen].bounds.size ;
+// 设置控制器,返回引用的View
+- (UIView*) setViewController : (UIViewController *) viewController {
+    [self.scrollView addSubview:viewController.view] ;
+    [self addChildViewController:viewController] ;
+    return  viewController.view ;
+}
+
+// 设置Frame
+- (void) setFrame {
     self.scrollView.backgroundColor = [UIColor blueColor] ;
-    self.leftView.frame = CGRectMake(0, 0, size.width * 0.8 , size.height) ;
-    self.menuView.frame = CGRectMake(size.width * 0.8, 0, size.width, size.height) ;
+    self.leftView.frame = CGRectMake(0, 0, ScreenSize.width * 0.8 , ScreenSize.height) ;
+    self.menuView.frame = CGRectMake(ScreenSize.width * 0.8, 0, ScreenSize.width, ScreenSize.height) ;
     self.maskView.frame = self.leftView.frame ;
     [self prepareScrollView] ;
-    [self test] ;
 }
 
+// 配置ScrollView
 - (void) prepareScrollView {
-    CGSize size = [UIScreen mainScreen].bounds.size ;
-    self.scrollView.contentSize = CGSizeMake(size.width * 1.8 , size.height) ;
-    self.scrollView.contentOffset = CGPointMake(size.width * 0.8 , 0) ;
+    self.scrollView.contentSize = CGSizeMake(ScreenSize.width * 1.8 , ScreenSize.height) ;
+    self.scrollView.contentOffset = CGPointMake(ScreenSize.width * 0.8 , 0) ;
     self.scrollView.bounces = NO ;
     self.scrollView.showsHorizontalScrollIndicator = NO ;
     self.scrollView.pagingEnabled = YES ;
@@ -67,17 +83,6 @@
         self.scrollView.contentOffset = CGPointMake(offSet, 0) ;
     }] ;
 }
-
-#pragma mark - 测试
-- (void) test {
-    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"11-1"] ] ;
-    imageView.contentMode = UIViewContentModeScaleAspectFill ;
-    imageView.clipsToBounds = YES ;
-    imageView.frame = self.leftView.frame ;
-    [self.leftView addSubview:imageView ] ;
-}
-
-
 
 #pragma mark - 懒加载
 - (UIView *)menuView {
