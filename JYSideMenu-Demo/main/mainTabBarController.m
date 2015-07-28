@@ -36,10 +36,14 @@
 //    vc.tabBarItem.selectedImage = [UIImage imageNamed:hImageName] ;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc] ;
     if (left) {
-        vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"left" style:0 target:self action:@selector(leftClick)] ;
+        [self setLeftBack:vc] ;
     }
     
     [self addChildViewController:nav] ;
+}
+
+- (void) setLeftBack : (UIViewController*) vc {
+     vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"left" style:0 target:self action:@selector(leftClick)] ;
 }
 
 - (void) leftClick {
@@ -51,6 +55,23 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.mainViewC setScrollEnabled: tabBarController.selectedIndex == 0] ;
+}
+
+// model新的控制器
+- (void) modelViewController : (UIViewController *) ViewController title: (NSString *) title{
+    [self leftClick] ;
+    UINavigationController *nav =(UINavigationController*) self.viewControllers.firstObject ;
+    NSArray *titleArray = [nav.viewControllers valueForKey:@"title"] ;
+    NSUInteger index = [titleArray indexOfObject:title] ;
+     NSLog(@"%tu  %@" , index , titleArray) ;
+    if (index > 100) {
+        [nav pushViewController:ViewController animated:NO] ;
+        [self setLeftBack:ViewController];
+        ViewController.title = title ;
+        return ;
+    }
+    [nav popToViewController:[nav.viewControllers objectAtIndex:index] animated:NO] ;
+
 }
 
 @end

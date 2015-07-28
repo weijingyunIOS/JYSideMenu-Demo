@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuViewController.h"
+#import "mainTabBarController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @property (weak , nonatomic) MenuViewController * mainViewC ;
+@property (weak , nonatomic) mainTabBarController * mainTab ;
 @end
 

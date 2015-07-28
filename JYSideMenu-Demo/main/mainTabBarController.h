@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface mainTabBarController : UITabBarController <UITabBarControllerDelegate>
-
+- (void) modelViewController : (UIViewController *) ViewController title: (NSString *) title ;
 @end
