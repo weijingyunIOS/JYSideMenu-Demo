@@ -7,24 +7,32 @@
 //
 
 #import "LeftViewController.h"
+@interface LeftViewController ()
+@property (weak , nonatomic) UIImageView *imageView ;
+@end
 
 @implementation LeftViewController
 - (void)viewDidLoad {
-    [self.view addSubview:[UIButton buttonWithType:UIButtonTypeContactAdd]] ;
+    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"ww"]] ;
+    imageView.contentMode = UIViewContentModeScaleAspectFill ;
+    imageView.clipsToBounds = YES ;
+    self.imageView = imageView ;
+    [self.view addSubview:imageView ] ;
+    
+    UIButton * but = [UIButton buttonWithType:UIButtonTypeContactAdd] ;
+    [but addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchDragInside] ;
+    [self.view addSubview:but] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated] ;
-    [self test] ;
+    self.imageView.frame = self.view.frame ;
 }
 
-- (void) test {
-    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"ww"]] ;
-    imageView.contentMode = UIViewContentModeScaleAspectFill ;
-    imageView.clipsToBounds = YES ;
-    imageView.frame = self.view.frame ;
-    [self.view addSubview:imageView ] ;
-    
+- (void) butClick {
+    NSLog(@"%s" , __func__) ;
 }
+
+
 
 @end

@@ -14,6 +14,8 @@
 @property (weak , nonatomic) UIView * maskView ;
 @property (weak , nonatomic) UIView * menuView ;
 @property (weak , nonatomic) UIView * leftView ;
+@property (weak , nonatomic) UIViewController * LeftController ;
+@property (weak , nonatomic) UIViewController * menuController ;
 
 @end
 
@@ -24,14 +26,19 @@
 - (instancetype) initWithLeftViewController:(UIViewController *)LeftController MenuViewController:(UIViewController *)menuController {
     if (self = [super init]) {
         NSAssert(LeftController != nil && menuController != nil, @"控制器不可为空") ;
-        UIScrollView * scV = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
-        self.scrollView = scV ;
-        [self.view addSubview:scV] ;
-        self.leftView = [self setViewController:LeftController] ;
-        self.menuView = [self setViewController:menuController] ;
-        [self setFrame] ;
+        self.LeftController = LeftController ;
+        self.menuController = menuController ;
     }
     return self ;
+}
+
+- (void)loadView {
+    UIScrollView * scV = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
+    self.scrollView = scV ;
+    self.view = scV ;
+    self.leftView = [self setViewController:self.LeftController] ;
+    self.menuView = [self setViewController:self.menuController] ;
+    [self setFrame] ;
 }
 
 // 是否允许侧滑
@@ -48,7 +55,6 @@
 
 // 设置Frame
 - (void) setFrame {
-    self.scrollView.backgroundColor = [UIColor blueColor] ;
     self.leftView.frame = CGRectMake(0, 0, ScreenSize.width * 0.8 , ScreenSize.height) ;
     self.menuView.frame = CGRectMake(ScreenSize.width * 0.8, 0, ScreenSize.width, ScreenSize.height) ;
     self.maskView.frame = self.leftView.frame ;
@@ -81,7 +87,6 @@
 - (void) changeViewController {
     CGFloat offSet = self.scrollView.contentOffset.x == 0 ? ScreenSize.width * 0.8 : 0 ;
     [self.leftView bringSubviewToFront:self.maskView] ;
-    [self scrollViewDidScroll:self.scrollView ] ;
     [UIView animateWithDuration:0.3 animations:^{
         self.maskView.alpha = 0.5 ;
         self.scrollView.contentOffset = CGPointMake(offSet, 0) ;

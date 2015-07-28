@@ -23,7 +23,6 @@
     UIViewController *leftC = [[LeftViewController alloc] init] ;
     MenuViewController * menu = [[MenuViewController alloc] initWithLeftViewController:leftC MenuViewController:mainView] ;
     self.mainViewC = menu ;
-    leftC.view.backgroundColor = [UIColor orangeColor] ;
     self.window.rootViewController = menu ;
     [self.window makeKeyAndVisible] ;
     return YES;
