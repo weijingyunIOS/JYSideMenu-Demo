@@ -9,6 +9,9 @@
 #import "LeftViewController.h"
 
 @implementation LeftViewController
+- (void)viewDidLoad {
+    [self.view addSubview:[UIButton buttonWithType:UIButtonTypeContactAdd]] ;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated] ;
@@ -16,11 +19,12 @@
 }
 
 - (void) test {
-    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"11-1"] ] ;
+    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"ww"]] ;
     imageView.contentMode = UIViewContentModeScaleAspectFill ;
     imageView.clipsToBounds = YES ;
     imageView.frame = self.view.frame ;
     [self.view addSubview:imageView ] ;
+    
 }
 
 @end

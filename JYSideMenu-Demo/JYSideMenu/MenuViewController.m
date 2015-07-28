@@ -34,6 +34,11 @@
     return self ;
 }
 
+// 是否允许侧滑
+- (void) setScrollEnabled : (BOOL) enabled {
+    self.scrollView.scrollEnabled = enabled ;
+}
+
 // 设置控制器,返回引用的View
 - (UIView*) setViewController : (UIViewController *) viewController {
     [self.scrollView addSubview:viewController.view] ;
@@ -66,11 +71,10 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    self.leftView.layer.anchorPoint = CGPointZero ;
-    self.leftView.layer.position = CGPointMake(scrollView.contentOffset.x *0.65 , 0);
+    CGSize size = self.leftView.frame.size ;
+    self.leftView.layer.position = CGPointMake(scrollView.contentOffset.x *0.65 + size.width * 0.5 , size.height * 0.5);
         CGFloat aa =  scrollView.contentOffset.x / ([UIScreen mainScreen].bounds.size.width * 0.8);
-     self.maskView.alpha = aa - 0.1  ;
-//    NSLog(@"%@ , %f" , NSStringFromCGPoint(self.leftView.layer.position) , scrollView.contentOffset.x) ;
+    self.maskView.alpha = aa - 0.1  ;
 }
 
 #pragma mark - 切换视图

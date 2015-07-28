@@ -11,6 +11,7 @@
 @interface MenuViewController : UIViewController
 
 - (void) changeViewController ;
+- (void) setScrollEnabled : (BOOL) enabled ;
 - (instancetype) initWithLeftViewController : (UIViewController *) LeftController MenuViewController : (UIViewController *) menuController ;
 
 @end

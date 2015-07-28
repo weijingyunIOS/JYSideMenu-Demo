@@ -10,13 +10,14 @@
 #import "MenuViewController.h"
 #import "AppDelegate.h"
 
-@implementation mainTabBarController
+@implementation mainTabBarController 
 
 - (void)viewDidLoad {
     [super viewDidLoad] ;
     self.view.backgroundColor = [UIColor purpleColor] ;
     self.view.frame = [UIScreen mainScreen].bounds ;
     [self addAllChildViewController] ;
+    self.delegate = self ;
 }
 
 - (void)addAllChildViewController {
@@ -44,6 +45,12 @@
 - (void) leftClick {
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.mainViewC changeViewController] ;
+}
+
+// 选中后是否滚动
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.mainViewC setScrollEnabled: tabBarController.selectedIndex == 0] ;
 }
 
 @end
