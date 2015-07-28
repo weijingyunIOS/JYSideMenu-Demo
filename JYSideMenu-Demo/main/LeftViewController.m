@@ -18,9 +18,9 @@
     imageView.clipsToBounds = YES ;
     self.imageView = imageView ;
     [self.view addSubview:imageView ] ;
-    
     UIButton * but = [UIButton buttonWithType:UIButtonTypeContactAdd] ;
-    [but addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchDragInside] ;
+    [but addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside] ;
+    but.frame = CGRectMake(100, 100, 37, 37) ;
     [self.view addSubview:but] ;
 }
 
