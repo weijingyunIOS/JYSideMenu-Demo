@@ -51,6 +51,11 @@
     [app.mainViewC changeViewController] ;
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController NS_AVAILABLE_IOS(3_0) {
+    // 如果重复点击不响应 , 防止话题出现回弹
+    return  tabBarController.selectedViewController != viewController ;
+}
+
 // 选中后是否滚动
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
